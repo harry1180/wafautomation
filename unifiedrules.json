@@ -1,0 +1,389 @@
+[
+{
+    "Name": "GeoMatchRule",
+    "Priority": 0,
+    "Statement": {
+        "GeoMatchStatement": {
+        "CountryCodes": ["BY","VN","CU","SD","CN","LY","YE","UA","SY","IR","RU","PS","CF","AF","KP","ST","MM","SS","ID"]
+    }
+        },
+
+    "Action": {
+        "Allow": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+    "Name": "SizeConstraintRule",
+    "Priority": 1,
+    "Statement": {
+        "SizeConstraintStatement": {
+        "FieldToMatch": {
+            "Method": {}
+
+        },
+        "ComparisonOperator": "EQ",
+        "Size": 123,
+        "TextTransformations": [
+            {
+                "Priority": 124,
+                "Type": "NONE"
+            }
+        ]
+    }},
+
+    "Action": {
+        "Allow": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+    },{
+    "Name": "SizeConstraintRule1",
+    "Priority": 2,
+    "Statement": {
+        "SizeConstraintStatement": {
+        "FieldToMatch": {
+            "Method": {}
+
+        },
+        "ComparisonOperator": "EQ",
+        "Size": 123,
+        "TextTransformations": [
+            {
+                "Priority": 125,
+                "Type": "NONE"
+            }
+        ]
+    }},
+
+    "Action": {
+        "Allow": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+  "Name": "SQLingectionRule1",
+  "Priority": 3,
+  "Action": {
+    "Block": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "samplerule11"
+  },
+  "Statement": {
+    "SqliMatchStatement": {
+      "FieldToMatch": {
+        "Body": {}
+      },
+      "TextTransformations": [
+        {
+          "Type": "HTML_ENTITY_DECODE",
+          "Priority": 40
+        },
+        {
+          "Type": "URL_DECODE",
+          "Priority": 41
+        }
+      ]
+    }
+  }
+},
+{
+    "Name": "SQLingectionRule2",
+    "Priority": 4,
+    "Statement": {
+        "SqliMatchStatement": {
+        "FieldToMatch": {
+            "QueryString": {}
+
+        },
+        "TextTransformations": [
+        	{
+    	  "Type": "HTML_ENTITY_DECODE",
+    	  "Priority": 42
+    	},
+    	{
+    	  "Type": "URL_DECODE",
+    	  "Priority": 43
+    	}
+        ]
+        }},
+
+    "Action": {
+        "Block": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+    },
+    {
+        "Name": "SQLingectionRule3",
+        "Priority": 5,
+        "Statement": {
+            "SqliMatchStatement": {
+            "FieldToMatch": {
+                "UriPath": {}
+
+            },
+            "TextTransformations": [
+	    	{
+		  "Type": "HTML_ENTITY_DECODE",
+		  "Priority": 44
+		},
+		{
+		  "Type": "URL_DECODE",
+		  "Priority": 45
+		}
+            ]
+            }},
+
+        "Action": {
+            "Block": {}
+
+        },
+        "VisibilityConfig": {
+            "SampledRequestsEnabled": true,
+            "CloudWatchMetricsEnabled": true,
+            "MetricName": "samplerule11"
+        }
+},
+{
+    "Name": "XssMatchRule",
+    "Priority": 6,
+    "Statement": {
+        "XssMatchStatement": {
+        "FieldToMatch": {
+            "Body": {}
+
+        },
+        "TextTransformations": [
+            {
+                "Priority": 10,
+                "Type": "HTML_ENTITY_DECODE"
+            },
+            {
+                "Priority": 11,
+                "Type": "URL_DECODE"
+            }
+        ]
+        }},
+
+    "Action": {
+        "Block": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+    "Name": "XssMatchRule1",
+    "Priority": 7,
+    "Statement": {
+        "XssMatchStatement": {
+        "FieldToMatch": {
+            "QueryString": {}
+
+        },
+        "TextTransformations": [
+            {
+                "Priority": 13,
+                "Type": "HTML_ENTITY_DECODE"
+            },
+            {
+                "Priority": 14,
+                "Type": "URL_DECODE"
+            }
+        ]
+        }},
+
+    "Action": {
+        "Block": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+    "Name": "DigitalEmergingDev-XssMatchRule2",
+    "Priority": 8,
+    "Statement": {
+        "XssMatchStatement": {
+        "FieldToMatch": {
+            "UriPath": {}
+
+        },
+        "TextTransformations": [
+            {
+                "Priority": 15,
+                "Type": "HTML_ENTITY_DECODE"
+            },
+            {
+                "Priority": 16,
+                "Type": "URL_DECODE"
+            }
+        ]
+        }},
+
+    "Action": {
+        "Block": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+    "Name": "ipsetrule",
+    "Priority": 9,
+    "Statement": {
+
+"IPSetReferenceStatement": {
+                    "ARN": "arn:aws:wafv2:us-east-1:977426766506:regional/ipset/Digital-Emerging-Dev-ipset/8788452d-ac88-4586-a7c2-364edfa20dff"
+}},
+    "Action": {
+        "Block": {}
+
+    },
+    "VisibilityConfig": {
+        "SampledRequestsEnabled": true,
+        "CloudWatchMetricsEnabled": true,
+        "MetricName": "samplerule11"
+    }
+},
+{
+  "Name": "ipsetrule1",
+  "Priority": 19,
+  "Action": {
+    "Block": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "samplerule11"
+  },
+  "Statement": {
+    "ByteMatchStatement": {
+      "FieldToMatch": {
+        "AllQueryArguments": {}
+      },
+      "PositionalConstraint": "CONTAINS",
+      "SearchString": "169.254.170.2",
+      "TextTransformations": [
+        {
+          "Type": "NONE",
+          "Priority": 0
+        }
+      ]
+    }
+  }
+},
+{
+  "Name": "ipsetrule2",
+  "Priority": 20,
+  "Action": {
+    "Block": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "samplerule11"
+  },
+  "Statement": {
+    "ByteMatchStatement": {
+      "FieldToMatch": {
+        "AllQueryArguments": {}
+      },
+      "PositionalConstraint": "CONTAINS",
+      "SearchString": "169.254.169.254",
+      "TextTransformations": [
+        {
+          "Type": "NONE",
+          "Priority": 0
+        }
+      ]
+    }
+  }
+},
+{
+  "Name": "ipsetrule3",
+  "Priority": 21,
+  "Action": {
+    "Block": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "samplerule11"
+  },
+  "Statement": {
+    "ByteMatchStatement": {
+      "FieldToMatch": {
+        "Body": {}
+      },
+      "PositionalConstraint": "CONTAINS",
+      "SearchString": "169.254.170.2",
+      "TextTransformations": [
+        {
+          "Type": "NONE",
+          "Priority": 0
+        }
+      ]
+    }
+  }
+},
+{
+  "Name": "ipsetrule4",
+  "Priority": 22,
+  "Action": {
+    "Block": {}
+  },
+  "VisibilityConfig": {
+    "SampledRequestsEnabled": true,
+    "CloudWatchMetricsEnabled": true,
+    "MetricName": "samplerule11"
+  },
+  "Statement": {
+    "ByteMatchStatement": {
+      "FieldToMatch": {
+        "Body": {}
+      },
+      "PositionalConstraint": "CONTAINS",
+      "SearchString": "169.254.169.254",
+      "TextTransformations": [
+        {
+          "Type": "NONE",
+          "Priority": 0
+        }
+      ]
+    }
+  }
+}
+
+]
