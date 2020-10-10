@@ -260,24 +260,6 @@
     }
 },
 {
-    "Name": "ipsetrule",
-    "Priority": 9,
-    "Statement": {
-
-"IPSetReferenceStatement": {
-                    "ARN": "arn:aws:wafv2:us-east-1:977426766506:regional/ipset/Digital-Emerging-Dev-ipset/8788452d-ac88-4586-a7c2-364edfa20dff"
-}},
-    "Action": {
-        "Block": {}
-
-    },
-    "VisibilityConfig": {
-        "SampledRequestsEnabled": true,
-        "CloudWatchMetricsEnabled": true,
-        "MetricName": "samplerule11"
-    }
-},
-{
   "Name": "ipsetrule1",
   "Priority": 19,
   "Action": {
